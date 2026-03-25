@@ -8,8 +8,8 @@ variable "environment" {
     default =  "dev"
 }
 
-variable "sg_name" {
-    type = list(string)
+variable "sg_names" {
+    type = list
     default = [
         # Databases
         "mongodb", "redis", "mysql", "rabbitmq",
