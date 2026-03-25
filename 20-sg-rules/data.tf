@@ -1,4 +1,4 @@
-data "http" "my_ip" {
+data "http" "my_public_ip_v4" {
   url = "https://ipv4.icanhazip.com"
 }
 
@@ -9,3 +9,8 @@ output "my_ip" {
 data "aws_ssm_parameter" "bastion_sg_id" {
   name = "/${var.project}/${var.environment}/bastion_sg_id"
 }
+
+data "aws_ssm_parameter" "mongodb_sg_id" {
+  name = "/${var.project}/${var.environment}/mongodb_sg_id"
+}
+
